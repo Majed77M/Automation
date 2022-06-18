@@ -103,7 +103,7 @@ public static void Fill_Walkin_details() throws InterruptedException {
 //	Walkin.Visa_type(driver).selectByVisibleText("Diplomatic");
 //	Walkin.Visa_type(driver).selectByValue("Diplomatic");
 	//Walkin.Visa_type(driver).selectByIndex(2);
-Walkin.PassportNO(driver).sendKeys("KfdksdKKFDSDo43");
+Walkin.PassportNO(driver).sendKeys("KfDSJKREKFDSDo43");
 //	Thread.sleep(1000);
 	//WebElement TravelType = driver.findElement(By.xpath("//select[@id='travelType']"));
 //	Thread.sleep(2000);
@@ -128,7 +128,7 @@ WebElement Visa_type_valueWalkin= Walkin.Visa_type(driver).getFirstSelectedOptio
 	Walkin.Passporttype(driver).selectByIndex(1);
 	Walkin.Firstname(driver).sendKeys("Majed");
 	Walkin.Middlename(driver).sendKeys("Sultan");
-	Walkin.Lastname(driver).sendKeys("Alotaibi");
+	Walkin.Lastname(driver).sendKeys("AlotaibiGIThub");
 	Walkin.Place_of_Birth(driver).sendKeys("Riyadh");
 	Walkin.Email(driver).sendKeys("motaibi@Saudivts.com");
 	Walkin.MobileNO(driver).sendKeys("0535352885");
