@@ -5,11 +5,8 @@
     <classes>
       <class name="Tests.CoreApptest">
         <methods>
-          <include name="Navigate_to_Walkin"/>
-          <include name="ScrollDown_to_Manager"/>
+          <include name="SigninSVTS"/>
           <include name="Click_On_Walkin"/>
-          <include name="Fill_Walkin_details"/>
-          <include name="ReadExcel"/>
         </methods>
       </class> <!-- Tests.CoreApptest -->
     </classes>

@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Pages.Core_Sign_in_Page;
@@ -20,33 +21,30 @@ public class CoreApptest {
 	static WebDriver driver;
 
 	
-public static void main(String[] args) throws InterruptedException, IOException {
+//public static void main(String[] args) throws InterruptedException, IOException {
 //	WebDriverManager.chromedriver().setup();
 	// driver = new ChromeDriver();
-SigninSVTS();
-Thread.sleep(3000);
-ScrollDown_to_Manager();
-Thread.sleep(2000);
-Navigate_to_Walkin();
-Thread.sleep(1000);
+//SigninSVTS();
+//Thread.sleep(3000);
+//ScrollDown_to_Manager();
+//Thread.sleep(2000);
+//Navigate_to_Walkin();
+//Thread.sleep(1000);
 //Click_On_Walkin();
-Fill_Walkin_details();
+//Fill_Walkin_details();
 //ReadExcel();
-System.out.println("Test successfully completed");
-driver.quit();
+//System.out.println("Test successfully completed");
+
+//driver.quit();
 	//driver = new ChromeDriver();
 	
 	//System.out.println("Browser closed successfully");
 //	driver.close();
 
-}
+//}
 
-@Test
 
-public static void ReadExcel () throws IOException {
-	DataInput.dataRead();
-}
-@Test
+@BeforeTest
 public static void SigninSVTS() throws InterruptedException {
 	
 	WebDriverManager.chromedriver().setup();
@@ -57,53 +55,54 @@ public static void SigninSVTS() throws InterruptedException {
 	Core_Sign_in_Page.Username(driver).sendKeys("loadtest_26@tasheer.com");
 	Thread.sleep(3000);
 	Core_Sign_in_Page.next(driver).click();
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 	Core_Sign_in_Page.Password(driver).sendKeys("Hs622!@ad");
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 	Core_Sign_in_Page.Sign_in_button(driver).click();
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 	Core_Sign_in_Page.Stay_signed_in(driver).click();
-	Thread.sleep(2000);
+	Thread.sleep(3000);
 }
-@Test
+@Test(priority=1)
 public static void ScrollDown_to_Manager() throws InterruptedException {
 //WebDriverManager.chromedriver().setup();
 	// driver = new ChromeDriver();
+Home_Page home = new Home_Page(driver);
+home.CLICKMANAGER(driver).click();
 	Home_Page.Click_on_Manager(driver).click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	Home_Page.Click_on_BOD(driver).click();;
 	Thread.sleep(8000);
-	WebElement Activate_BOD = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/button[1]"));
-	
+	WebElement Activate_BOD = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/button[1]"));
 	if(Activate_BOD.isEnabled()==false) {
 		Home_Page.Click_On_Recpetion(driver).click();
 		System.out.println("Click on Recpetion");
 		Home_Page.Click_on_Walkin(driver).click();
 	}
 	else	{
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	Home_Page.Activate_BOD(driver).click();
 	
 	Thread.sleep(500);}
 //driver.close();
 }
-@Test
+@Test (priority=2)
 public static void Navigate_to_Walkin() throws InterruptedException {
 	Home_Page.Navigate_to_Walkin(driver).click();
 	Thread.sleep(500);
 }
-@Test
+@Test (priority=3)
 public static void Click_On_Walkin() throws InterruptedException {
-	Thread.sleep(1000);
+	Thread.sleep(500);
 	Home_Page.Click_on_Walkin(driver).click();
 }
-@Test
+@Test (priority=4)
 public static void Fill_Walkin_details() throws InterruptedException {
 	//Walkin.Traveling_as(driver).selectByIndex(0);
 //	Walkin.Visa_type(driver).selectByVisibleText("Diplomatic");
 //	Walkin.Visa_type(driver).selectByValue("Diplomatic");
 	//Walkin.Visa_type(driver).selectByIndex(2);
-Walkin.PassportNO(driver).sendKeys("KfDSJKREKFDSDo43");
+Walkin.PassportNO(driver).sendKeys("sllkkjjkjkjk6767o43");
 //	Thread.sleep(1000);
 	//WebElement TravelType = driver.findElement(By.xpath("//select[@id='travelType']"));
 //	Thread.sleep(2000);
